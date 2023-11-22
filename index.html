@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive DataTable</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+</head>
+
+<body>
+
+    <table id="toolTable" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Object Name</th>
+                <th>Publisher</th>
+                <th>Publisher URL</th>
+                <th>Year Published</th>
+                <th>Tool URL</th>
+                <th>Type</th>
+                <th>Language</th>
+                <th>Origin</th>
+                <th>Practice Area</th>
+                <th>Industry Focus</th>
+                <th>Key words</th>
+                <th>Report Issue</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be loaded here by DataTables -->
+        </tbody>
+    </table>
+
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="reportForm">
+                <h2>Report Issue</h2>
+                <label for="issue">Describe the issue:</label>
+                <textarea id="issue" name="issue" required></textarea>
+                <input type="hidden" id="rowId" name="rowId">
+                <button type="submit">Submit Report</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
+
+</body>
+
+</html>
