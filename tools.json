@@ -1,6 +1,6 @@
 [
  {
-   "ObjectName": "Good Practice Principles for Data Ethics in the Public Sector",
+   "Resource": "Good Practice Principles for Data Ethics in the Public Sector",
    "Publisher": "OECD",
    "PublisherURL": "",
    "YearPublished": 2019,
@@ -10,11 +10,11 @@
    "Origin": "Multi-national",
    "PracticeArea": "Government",
    "IndustryFocus": "Public Sector",
-   "KeyWords": "Data Ethics",
+   "Tags": "Data Ethics",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "AI Select Committee’s five proposed principles",
+   "Resource": "AI Select Committee’s five proposed principles",
    "Publisher": "UK House of Lords",
    "PublisherURL": "",
    "YearPublished": 2018,
@@ -24,11 +24,11 @@
    "Origin": "UK",
    "PracticeArea": "",
    "IndustryFocus": "",
-   "KeyWords": "AI ",
+   "Tags": "AI",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Fast track principles for understanding Artificial Intelligence Ethics and Safety",
+   "Resource": "Fast track principles for understanding Artificial Intelligence Ethics and Safety",
    "Publisher": "Alan Turing Institute",
    "PublisherURL": "",
    "YearPublished": null,
@@ -38,11 +38,11 @@
    "Origin": "UK",
    "PracticeArea": "",
    "IndustryFocus": "",
-   "KeyWords": "AI ",
+   "Tags": "AI",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Government Data Ethics Framework",
+   "Resource": "Government Data Ethics Framework",
    "Publisher": "UK Government",
    "PublisherURL": "",
    "YearPublished": null,
@@ -52,11 +52,11 @@
    "Origin": "UK",
    "PracticeArea": "",
    "IndustryFocus": "",
-   "KeyWords": "Data Ethics",
+   "Tags": "Data Ethics",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Data Ethics 4 All Foundation: Data and AI Framework",
+   "Resource": "Data Ethics 4 All Foundation: Data and AI Framework",
    "Publisher": "Data Ethics 4 All Foundation",
    "PublisherURL": "",
    "YearPublished": null,
@@ -66,11 +66,11 @@
    "Origin": "USA",
    "PracticeArea": "",
    "IndustryFocus": "",
-   "KeyWords": "Data Ethics, AI",
+   "Tags": "Data Ethics, AI",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "The Systemic Data Ethics Framework",
+   "Resource": "The Systemic Data Ethics Framework",
    "Publisher": "Systemic Data Ethics (Peter Brownell)",
    "PublisherURL": "",
    "YearPublished": null,
@@ -80,11 +80,11 @@
    "Origin": "",
    "PracticeArea": "",
    "IndustryFocus": "",
-   "KeyWords": "Data Ethics",
+   "Tags": "Data Ethics",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Recommendations for local government data ethics capabilities ",
+   "Resource": "Recommendations for local government data ethics capabilities ",
    "Publisher": "London Office for Technology and Innovation (LOTI)",
    "PublisherURL": "",
    "YearPublished": null,
@@ -94,11 +94,11 @@
    "Origin": "UK",
    "PracticeArea": "Government",
    "IndustryFocus": "Public Sector",
-   "KeyWords": "Data Ethics, Skills",
+   "Tags": "Data Ethics, Skills",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Data Ethics Guidebook and Toolkit",
+   "Resource": "Data Ethics Guidebook and Toolkit",
    "Publisher": "Better Evaluation",
    "PublisherURL": "",
    "YearPublished": null,
@@ -108,11 +108,11 @@
    "Origin": "",
    "PracticeArea": "",
    "IndustryFocus": "",
-   "KeyWords": "Data Ethics",
+   "Tags": "Data Ethics",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Data Ethics Toolkits",
+   "Resource": "Data Ethics Toolkits",
    "Publisher": "DataKind",
    "PublisherURL": "",
    "YearPublished": null,
@@ -122,11 +122,11 @@
    "Origin": "UK",
    "PracticeArea": "",
    "IndustryFocus": "",
-   "KeyWords": "",
+   "Tags": "",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Ethics Checklist for Data Scientists",
+   "Resource": "Ethics Checklist for Data Scientists",
    "Publisher": "data.org",
    "PublisherURL": "",
    "YearPublished": null,
@@ -136,11 +136,11 @@
    "Origin": "",
    "PracticeArea": "",
    "IndustryFocus": "Data Science",
-   "KeyWords": "",
+   "Tags": "",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Guidelines on using the ethics self-assessment process",
+   "Resource": "Guidelines on using the ethics self-assessment process",
    "Publisher": "UK Statistics Authority",
    "PublisherURL": "",
    "YearPublished": null,
@@ -150,11 +150,11 @@
    "Origin": "UK",
    "PracticeArea": "Government",
    "IndustryFocus": "Public Sector",
-   "KeyWords": "",
+   "Tags": "",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Ethics Self-Assessment Tool",
+   "Resource": "Ethics Self-Assessment Tool",
    "Publisher": "UK Statistics Authority",
    "PublisherURL": "",
    "YearPublished": null,
@@ -164,11 +164,11 @@
    "Origin": "UK",
    "PracticeArea": "Government",
    "IndustryFocus": "Public Sector",
-   "KeyWords": "",
+   "Tags": "",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Data Ethics Toolkit: A Toolkit for Data Ethics in the Participatory Sciences",
+   "Resource": "Data Ethics Toolkit: A Toolkit for Data Ethics in the Participatory Sciences",
    "Publisher": "Citizen Science",
    "PublisherURL": "",
    "YearPublished": null,
@@ -178,11 +178,11 @@
    "Origin": "",
    "PracticeArea": "",
    "IndustryFocus": "Participatory Sciences",
-   "KeyWords": "",
+   "Tags": "",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Algorithmic Impact Assessment: AIA Tempalte",
+   "Resource": "Algorithmic Impact Assessment: AIA Tempalte",
    "Publisher": "Ada Lovelace Institute",
    "PublisherURL": "",
    "YearPublished": null,
@@ -192,11 +192,11 @@
    "Origin": "UK",
    "PracticeArea": "",
    "IndustryFocus": "",
-   "KeyWords": "",
+   "Tags": "",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "The Data Ethics Guidebook and Toolkit",
+   "Resource": "The Data Ethics Guidebook and Toolkit",
    "Publisher": "The David and Lucile Packard Fondation",
    "PublisherURL": "",
    "YearPublished": null,
@@ -206,11 +206,11 @@
    "Origin": "USA",
    "PracticeArea": "",
    "IndustryFocus": "",
-   "KeyWords": "",
+   "Tags": "",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "The Aletheia Framework",
+   "Resource": "The Aletheia Framework",
    "Publisher": "Rolls Royce",
    "PublisherURL": "",
    "YearPublished": null,
@@ -220,11 +220,11 @@
    "Origin": "UK",
    "PracticeArea": "Manufacturing",
    "IndustryFocus": "Robotics, Automation",
-   "KeyWords": "AI",
+   "Tags": "AI",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Federal Data Strategic Data Ethics Framework",
+   "Resource": "Federal Data Strategic Data Ethics Framework",
    "Publisher": "US Federal Government",
    "PublisherURL": "",
    "YearPublished": null,
@@ -234,11 +234,11 @@
    "Origin": "USA",
    "PracticeArea": "",
    "IndustryFocus": "",
-   "KeyWords": "",
+   "Tags": "",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Data Ethics Charter",
+   "Resource": "Data Ethics Charter",
    "Publisher": "Danish Medicines Agency",
    "PublisherURL": "",
    "YearPublished": null,
@@ -248,11 +248,11 @@
    "Origin": "DK",
    "PracticeArea": "Medicine",
    "IndustryFocus": "Health",
-   "KeyWords": "",
+   "Tags": "",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "So, you want to build an algorithm?",
+   "Resource": "So, you want to build an algorithm?",
    "Publisher": "Center for Democracy and Technology",
    "PublisherURL": "",
    "YearPublished": null,
@@ -262,11 +262,11 @@
    "Origin": "USA",
    "PracticeArea": "",
    "IndustryFocus": "",
-   "KeyWords": "",
+   "Tags": "",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Data Ethics Decision Aid",
+   "Resource": "Data Ethics Decision Aid",
    "Publisher": "Utrecht Data School",
    "PublisherURL": "",
    "YearPublished": null,
@@ -276,11 +276,11 @@
    "Origin": "NL",
    "PracticeArea": "",
    "IndustryFocus": "",
-   "KeyWords": "",
+   "Tags": "",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Data Ethics Readiness Test",
+   "Resource": "Data Ethics Readiness Test",
    "Publisher": "DataEthics.eu",
    "PublisherURL": "",
    "YearPublished": null,
@@ -290,11 +290,11 @@
    "Origin": "EU",
    "PracticeArea": "",
    "IndustryFocus": "",
-   "KeyWords": "",
+   "Tags": "",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Data-driven tools in recruitment ",
+   "Resource": "Data-driven tools in recruitment ",
    "Publisher": "Recruitment and Employment Confederation",
    "PublisherURL": "",
    "YearPublished": null,
@@ -304,11 +304,11 @@
    "Origin": "UK",
    "PracticeArea": "Recruitment",
    "IndustryFocus": "Human Resources",
-   "KeyWords": "Employment",
+   "Tags": "Employment",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Framework for Ethical Learning Technology",
+   "Resource": "Framework for Ethical Learning Technology",
    "Publisher": "Association for Learning Technology",
    "PublisherURL": "",
    "YearPublished": 2021,
@@ -318,11 +318,11 @@
    "Origin": "UK",
    "PracticeArea": "Education",
    "IndustryFocus": "Technology",
-   "KeyWords": "Further Education, Higher Education, Education Technology, Learning Analytics",
+   "Tags": "Further Education, Higher Education, Education Technology, Learning Analytics",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "The digital traveller: implications for data ethics and data governance in tourism and hospitality",
+   "Resource": "The digital traveller: implications for data ethics and data governance in tourism and hospitality",
    "Publisher": "Yallop, A.C., Gică, O.A., Moisescu, O.I., Coroș, M.M. and Séraphin, H. (2023), \"The digital traveller: implications for data ethics and data governance in tourism and hospitality\", Journal of Consumer Marketing, Vol. 40 No. 2, pp. 155-170. https://doi.org/10.1108/JCM-12-2020-4278",
    "PublisherURL": "",
    "YearPublished": 2023,
@@ -332,11 +332,11 @@
    "Origin": "AUS",
    "PracticeArea": "Tourism & Hospitality ",
    "IndustryFocus": "Tourism, Hospitality",
-   "KeyWords": "",
+   "Tags": "",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Data Ethics Canvas",
+   "Resource": "Data Ethics Canvas",
    "Publisher": "Open Data Institute",
    "PublisherURL": "",
    "YearPublished": 2021,
@@ -346,11 +346,11 @@
    "Origin": "UK",
    "PracticeArea": "Unspecified",
    "IndustryFocus": "Data",
-   "KeyWords": "",
+   "Tags": "",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Data Ethics Maturity Model",
+   "Resource": "Data Ethics Maturity Model",
    "Publisher": "Open Data Institute",
    "PublisherURL": "",
    "YearPublished": 2022,
@@ -360,11 +360,11 @@
    "Origin": "UK",
    "PracticeArea": "Unspecified",
    "IndustryFocus": "Data",
-   "KeyWords": "",
+   "Tags": "",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Consequence Scanning Toolkit",
+   "Resource": "Consequence Scanning Toolkit",
    "Publisher": "DotEveryone",
    "PublisherURL": "",
    "YearPublished": 2020,
@@ -374,11 +374,11 @@
    "Origin": "UK",
    "PracticeArea": "Unspecified",
    "IndustryFocus": "Technology",
-   "KeyWords": "",
+   "Tags": "",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "An ethical decision-making process for computing professionals",
+   "Resource": "An ethical decision-making process for computing professionals",
    "Publisher": "O'Boyle, E.J. An ethical decision-making process for computing professionals. Ethics and Information Technology 4, 267–277 (2002). https://doi.org/10.1023/A:1021320617495",
    "PublisherURL": "",
    "YearPublished": 2002,
@@ -388,11 +388,11 @@
    "Origin": "USA",
    "PracticeArea": "Unspecified",
    "IndustryFocus": "Technology",
-   "KeyWords": "",
+   "Tags": "",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Reflexivity grid on the ethical issues of artificial intelligence systems (AIS)",
+   "Resource": "Reflexivity grid on the ethical issues of artificial intelligence systems (AIS)",
    "Publisher": "Université de Montréal",
    "PublisherURL": "",
    "YearPublished": 2023,
@@ -402,11 +402,11 @@
    "Origin": "CAN",
    "PracticeArea": "Unspecified",
    "IndustryFocus": "Technology",
-   "KeyWords": "AI, Policy",
+   "Tags": "AI, Policy",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Algorithmic Impact Assessment tool",
+   "Resource": "Algorithmic Impact Assessment tool",
    "Publisher": "Government of Canada",
    "PublisherURL": "",
    "YearPublished": 2023,
@@ -416,11 +416,11 @@
    "Origin": "CAN",
    "PracticeArea": "Government",
    "IndustryFocus": "Public Sector",
-   "KeyWords": "Treasury, Health, Employment, Social",
+   "Tags": "Treasury, Health, Employment, Social",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Islamic virtue-based ethics for artificial intelligence",
+   "Resource": "Islamic virtue-based ethics for artificial intelligence",
    "Publisher": "Raquib, A., Channa, B., Zubair, T. et al. Islamic virtue-based ethics for artificial intelligence. Discov Artif Intell 2, 11 (2022). https://doi.org/10.1007/s44163-022-00028-2",
    "PublisherURL": "",
    "YearPublished": 2022,
@@ -430,11 +430,11 @@
    "Origin": "PK",
    "PracticeArea": "Unspecified",
    "IndustryFocus": "AI",
-   "KeyWords": "Islam, AI",
+   "Tags": "Islam, AI",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  },
  {
-   "ObjectName": "Recommendations on the Ethics of Artificial Intelligence",
+   "Resource": "Recommendations on the Ethics of Artificial Intelligence",
    "Publisher": "UNESCO",
    "PublisherURL": "",
    "YearPublished": 2021,
@@ -444,7 +444,7 @@
    "Origin": "FR",
    "PracticeArea": "Unspecified",
    "IndustryFocus": "AI",
-   "KeyWords": "",
+   "Tags": "",
    "ReportIssue": "<button><a class=\"issue-url\" href=\"google.com\">report an issue</a></button>"
  }
 ]

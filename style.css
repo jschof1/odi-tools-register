@@ -1,199 +1,69 @@
-
+/* set background */
 body {
-    padding: 30px;
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
 }
 
-
-/* Overall table styles */
-table.dataTable {
-    width: 100%;
-    margin: 0 auto;
-    border-collapse: collapse;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-    overflow: hidden;
-}
-
-/* Table headers */
-table.dataTable thead th {
-    background-color: #1555c3;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 6px;
-    position: relative;
-    white-space: nowrap;
-    text-align: left;
-    padding: 6px;
-        /* Prevent text from wrapping */
-        overflow: hidden;
-        /* Hide text that doesn't fit */
-        text-overflow: ellipsis;
-        /* Show ellipsis if text is too long */
-        border-right: 1px solid #dddddd;
-            /* Border for each cell */
-}
-table.dataTable thead th:first-child {
-    background-color: #333;
-    /* Darker background to stand out */
-    color: #ffffff;
-    font-weight: bold;
-    /* Make text bold */
-    width: 20%;
-    /* Set a specific width or use 'auto' if you prefer */
-}
-/* Table body */
-table.dataTable tbody td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #dddddd;
-    border-right: 1px solid #dddddd;
-        /* Border for each cell */
-}
-
-table.dataTable tbody td:first-child {
+.cards tbody tr {
+    float: left;
+    width: 20rem;
+    margin: 0.5rem;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
     background-color: #f9f9f9;
-    /* Light background to stand out */
+    padding: 1rem;
+    border: 1px solid #ddd;
+        /* Border for the card */
+}
+
+
+.cards tbody {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* This centers the items horizontally */
+    gap: 1rem;
+    /* Adds space between the cards */
+}
+
+.cards tbody td {
+    display: block;
+    word-wrap: break-word;
+        /* Breaks the words to prevent overflow */
+        overflow-wrap: break-word;
+        /* Alternative to word-wrap */
+}
+
+.cards thead {
+    display: none;
+}
+
+.cards td:before {
+    content: attr(data-label);
+    display: block;
+    min-width: 4rem;
+    margin-left: 0;
+    margin-right: 1rem;
+    /* add line break to data-label */
+    white-space: pre-wrap;
+    text-transform: uppercase;
     font-weight: bold;
-    /* Make text bold */
-    white-space: nowrap;
-    /* Prevent text from wrapping */
-    text-overflow: ellipsis;
-    /* Use ellipsis for overflow text */
-    overflow: hidden;
-    /* Hide overflow text */
-}
-table.dataTable thead th:first-child,
-table.dataTable tbody td:first-child {
-    border-right: 2px solid #4F5D75;
-    /* Add a right border to the first column */
-}
-/* Rows on hover */
-table.dataTable tbody tr:hover {
-    background-color: #f4f4f4;
-    cursor: pointer;
+    margin-bottom: 5px;
+    color: black;
 }
 
-/* Table header pseudo-element for a subtle bottom highlight */
-table.dataTable thead th:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #E1E1E1;
+
+.cards a {
+    color: #007bff;
+    text-decoration: none;
 }
 
-/* Pagination and search input styling */
-.dataTables_wrapper .dataTables_paginate .paginate_button {
-padding: 6px 12px;
-    border: 1px solid transparent;
-    /* Hide border by default */
-    border-radius: 4px;
-    background-color: #E1E1E1;
-    margin: 2px;
-    transition: all 0.3s ease-in-out;
+.cards a:hover {
+    text-decoration: underline;
 }
 
-.dataTables_wrapper .dataTables_paginate .paginate_button.current,
-.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-border-color: #4F5D75;
-    /* Border color on hover and current page */
-    background-color: #4F5D75;
-    color: #ffffff;
+/* Style for selected row */
+tr.selected {
+    background-color: #e9ecef;
 }
 
-.dataTables_wrapper .dataTables_filter input {
-    border-radius: 4px;
-    padding: 5px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    outline: none;
-        border-color: #4F5D75;
-        /* Highlight color when focused */
-        box-shadow: 0 0 0 2px rgba(79, 93, 117, 0.2);
-        /* Subtle outer glow effect */
-}
 
-/* 'Report Issue' button styling */
-button {
-    background-color: #EF8354;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
 
-button:hover {
-    background-color: #E75A42;
-}
-   /* Modal styles */
-   .modal {
-       display: none;
-       /* Hidden by default */
-       position: fixed;
-       /* Stay in place */
-       z-index: 1;
-       /* Sit on top */
-       left: 0;
-       top: 0;
-       width: 100%;
-       /* Full width */
-       height: 100%;
-       /* Full height */
-       overflow: auto;
-       /* Enable scroll if needed */
-       background-color: rgb(0, 0, 0);
-       /* Fallback color */
-       background-color: rgba(0, 0, 0, 0.4);
-       /* Black w/ opacity */
-   }
-
-   .modal-content {
-       background-color: #fefefe;
-       margin: 15% auto;
-       /* 15% from the top and centered */
-       padding: 20px;
-       border: 1px solid #888;
-       width: 80%;
-       /* Could be more or less, depending on screen size */
-   }
-    a {
-        /* remove all styling */
-        text-decoration: none;
-        text-align: center;
-    }
-
-    .issue-url {
-        color: white;
-    }
-   .close {
-       color: #aaa;
-       float: right;
-       font-size: 28px;
-       font-weight: bold;
-   }
-
-   .close:hover,
-   .close:focus {
-       color: black;
-       text-decoration: none;
-       cursor: pointer;
-   }
-
-   .tool-url {
-    color: blue
-   }
-   .filter-checkbox {
-       margin-bottom: 20px;
-       background-color: rgb(225, 225, 225);
-       padding: 10px;
-       border-radius: 5px;
-   }
-   .filter-item {
-         padding-inline: 20px;
-         border-right: 1px solid blue;
-   }
