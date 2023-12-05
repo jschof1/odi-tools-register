@@ -8,10 +8,10 @@ button {
     color: white;
 }
 .container {
-    max-width: 100%;
-    padding-right: 15px;
+    padding-right: 40px;
     /* Adjust as needed */
-    padding-left: 15px;
+    padding-left: 40px;
+    margin-top: 20px;
     /* Adjust as needed */
     margin-right: auto;
     margin-left: auto;
@@ -78,6 +78,10 @@ table tbody tr:hover td {
     color: white;
 }
 
+p {
+    margin: 0;
+}
+
 .cards a {
     text-decoration: none;
 }
@@ -97,6 +101,10 @@ button {
     border: none;
     cursor: pointer;
     outline: inherit;
+}
+
+.dt-buttons {
+    margin-bottom: 10px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -120,4 +128,18 @@ button {
         padding: 0.5rem;
         /* Smaller padding for very small screens */
     }
+}
+
+
+div.dataTables_wrapper div.dataTables_filter label {
+    float: right;
+    text-align: right;
+} 
+.dt-buttons   {
+    text-align: center;
+}
+
+.row:first-child {
+    border-bottom: 1px solid #263FA9;
+    margin-bottom: 15px;
 }
