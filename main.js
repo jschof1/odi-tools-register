@@ -1,171 +1,199 @@
-var table; // Declare the table variable outside the $(document).ready function
-var originalData = []; // Variable to store the original data
-
-// Custom function to filter data
 function filterData() {
-  var resourceType = $("#filterResource").val();
+  var Type = $("#filterType").val();
   var practiceArea = $("#filterPracticeArea").val();
   var countryOrigin = $("#filterOrigin").val();
 
-  // Filter original data based on dropdown values
   var filteredData = originalData.filter(function (item) {
     return (
-      (resourceType === "" || item.Resource === resourceType) &&
-      (practiceArea === "" || item.PracticeArea === practiceArea) &&
+      (Type === "" || item.Type === Type) &&
+      (practiceArea === "" || item["Practice Area"] === practiceArea) &&
       (countryOrigin === "" || item.Origin === countryOrigin)
     );
   });
 
-  // Update the DataTable with filtered data
   table.clear().rows.add(filteredData).draw();
 }
-
 function populateDropdown(selector, data, property) {
   var unique = new Set(data.map((item) => item[property]));
   unique.forEach((value) => {
-    $(selector).append(`<option value="${value}">${value}</option>`);
+    if (value && value.trim() !== "") {
+      // Check if the value is not empty
+      $(selector).append(`<option value="${value}">${value}</option>`);
+    }
   });
+}
+function csvToJson(csv) {
+  const lines = csv.split("\n");
+  const result = [];
+  const headers = lines[0].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
+
+  lines.slice(1).forEach((line) => {
+    const data = line.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
+    if (data) {
+      const obj = {};
+      headers.forEach((header, i) => {
+        obj[header.trim().replace(/^"|"$/g, "")] = data[i]
+          ? data[i].trim().replace(/^"|"$/g, "")
+          : "";
+      });
+      result.push(obj);
+    }
+  });
+
+  return result;
 }
 
 $(document).ready(function () {
-  fetch("tools.json")
-    .then((response) => {
-      if (!response.ok) throw new Error("Network response was not ok");
-      return response.json();
-    })
-    .then((data) => {
-      originalData = data; // Store the original data
-      populateDropdown("#filterResource", data, "Resource");
-      populateDropdown("#filterPracticeArea", data, "PracticeArea");
-      populateDropdown("#filterOrigin", data, "Origin");
+  fetch(
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTzbq_MeHU3eC-CKnr6D0pfkugIV_o_mEj8wpQqNmt3qg-oCceOJNWNh789ymsMF_h0Ib7ZEv6J8w5D/pub?gid=1252094585&single=true&output=csv"
+  )
+    .then((response) => response.text())
+    .then((csvData) => {
+      Papa.parse(csvData, {
+        header: true,
+        complete: function (results) {
+          const data = results.data;
+          originalData = data; // Store the original data
 
-      // Initialize the DataTable with the fetched data
-      table = $("#toolTable").DataTable({
-        dom:
-          "<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'<'float-md-right ml-2'B>f>>" +
-          "<'row'<'col-sm-12'tr>>" +
-          "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
-        data: data,
-        buttons: [
-          "csv",
-          {
-            text: '<i class="fa fa-id-badge fa-fw" aria-hidden="true"></i><p>Click to view as table</p>',
-            action: function (e, dt, node) {
-              $(dt.table().node()).toggleClass("cards");
-              if ($(dt.table().node()).hasClass("cards")) {
-                $(".fa", node).removeClass("fa-table").addClass("fa-id-badge");
-                $("p", node).text("Click to view as table");
-              } else {
-                $(".fa", node).removeClass("fa-id-badge").addClass("fa-table");
-                $("p", node).text("Click to view as cards");
-              }
-              dt.draw("page");
-            },
-            className: "btn-sm",
-            attr: {
-              title: "Change views",
-            },
-          },
-        ],
-        select: "single",
-        columns: [
-          { data: "Resource", title: "Resource" },
-          { data: "Publisher", title: "Publisher" },
-          { data: "YearPublished", title: "Year Published" },
-          {
-            data: "ToolURL",
-            title: "Tool URL",
-            render: function (data, type, row) {
-              return type === "display"
-                ? '<a href="' + data + '">Visit tool page</a>'
-                : data;
-            },
-          },
-          { data: "PracticeArea", title: "Practice Area" },
-          { data: "Tags", title: "Tags" },
-          { data: "ReportIssue", title: "Report Issue" },
-        ],
-        drawCallback: function (settings) {
-          var api = this.api();
-          var $table = $(api.table().node());
+          populateDropdown("#filterType", data, "Type");
+          populateDropdown("#filterPracticeArea", data, "Practice Area");
+          populateDropdown("#filterOrigin", data, "Origin");
 
-          if ($table.hasClass("cards")) {
-            // Create an array of labels containing all table headers
-            var labels = [];
-            $("thead th", $table).each(function () {
-              labels.push($(this).text());
-            });
+          table = $("#toolTable").DataTable({
+            responsive: true,
+            dom:
+              "<'row'<'col-sm-4'l><'col-sm-4'B><'col-sm-4'f>>" +
+              "<'row'<'col-sm-12'tr>>" +
+              "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+            data: data,
+            buttons: [
+              "csv",
+              {
+                text: '<i class="fa fa-id-badge fa-fw" aria-hidden="true"></i><p>Click to view as table</p>',
+                action: function (e, dt, node) {
+                  $(dt.table().node()).toggleClass("cards");
+                  if ($(dt.table().node()).hasClass("cards")) {
+                    $(".fa", node)
+                      .removeClass("fa-table")
+                      .addClass("fa-id-badge");
+                    $("p", node).text("Click to view as table");
+                  } else {
+                    $(".fa", node)
+                      .removeClass("fa-id-badge")
+                      .addClass("fa-table");
+                    $("p", node).text("Click to view as cards");
+                  }
+                  dt.draw("page");
+                },
+                className: "btn-sm",
+                attr: {
+                  title: "Change views",
+                },
+              },
+            ],
+            select: "single",
+            columns: [
+              { data: "Resource", title: "Resource" },
+              { data: "Author/Publisher", title: "Author/Publisher" },
+              { data: "Practice Area", title: "Practice Area" },
+              { data: "Year Published", title: "Year Published" },
+              {
+                data: "Tool URL",
+                title: "Tool URL",
+                render: function (data, type, row) {
+                  return type === "display"
+                    ? '<a href="' + data + '">Visit tool page</a>'
+                    : data;
+                },
+              },
+              { data: "Type", title: "Type" },
+              { data: "Origin", title: "Country of Origin" },
+              { data: "Tags", title: "Tags" },
+              {
+                data: "Citation",
+                title: "Citation",
+                render: function (data, type, row) {
+                  // If data is empty or undefined, return 'N/A'
+                  return data && data.trim() ? data : "N/A";
+                },
+              },
+            ],
+            drawCallback: function (settings) {
+              var api = this.api();
+              var $table = $(api.table().node());
 
-            // Add data-label attribute to each cell
-            $("tbody tr", $table).each(function () {
-              $(this)
-                .find("td")
-                .each(function (column) {
-                  $(this).attr("data-label", labels[column]);
+              if ($table.hasClass("cards")) {
+                var labels = [];
+                $("thead th", $table).each(function () {
+                  labels.push($(this).text());
                 });
-            });
 
-            var max = 0;
-            $("tbody tr", $table)
-              .each(function () {
-                max = Math.max($(this).height(), max);
-              })
-              .height(max);
-          } else {
-            // Remove data-label attribute from each cell
-            $("tbody td", $table).each(function () {
-              $(this).removeAttr("data-label");
-            });
+                $("tbody tr", $table).each(function () {
+                  $(this)
+                    .find("td")
+                    .each(function (column) {
+                      $(this).attr("data-label", labels[column]);
+                    });
+                });
 
-            $("tbody tr", $table).each(function () {
-              $(this).height("auto");
-            });
-          }
-        },
-      });
+                var max = 0;
+                $("tbody tr", $table)
+                  .each(function () {
+                    max = Math.max($(this).height(), max);
+                  })
+                  .height(max);
+              } else {
+                $("tbody td", $table).each(function () {
+                  $(this).removeAttr("data-label");
+                });
 
-      // Set the default view to cards
-      $(table.table().node()).addClass("cards");
-      $(".fa", this).toggleClass(["fa-table", "fa-id-badge"]);
-      table.draw();
+                $("tbody tr", $table).each(function () {
+                  $(this).height("auto");
+                });
+              }
+            },
+          });
 
-      // Event bindings for select and deselect
-      table.on("click", "tr", function () {
-        var data = table.row(this).data();
-        var dialogContent = `
+          $(table.table().node()).addClass("cards");
+          $(".fa", this).toggleClass(["fa-table", "fa-id-badge"]);
+          table.draw();
+
+          table.on("click", "tr", function () {
+            var data = table.row(this).data();
+            var dialogContent = `
           Resource: ${data.Resource}<br>
           Publisher: ${data.Publisher}<br>
           Country of Origin: ${data.Origin}<br>
-          Practice Area: ${data.PracticeArea}<br>
-          Year: ${data.YearPublished}<br>
-          URL: <a href="${data.ToolURL}">${data.ToolURL}</a><br>
+          Practice Area: ${data["Practice Area"]}<br>
+          Year: ${data["Year Published"]}<br>
+          URL: <a href="${data["Tool URL"]}">${data["Tool URL"]}</a><br>
           Tags: ${data.Tags}<br>
       `;
-        $("#cardDetailsContent").html(dialogContent);
-        $("#cardDetailsDialog")[0].showModal();
+            $("#cardDetailsContent").html(dialogContent);
+            $("#cardDetailsDialog")[0].showModal();
+          });
+
+          $("#closeDialog")
+            .on("click", function () {
+              $("#cardDetailsDialog")[0].close();
+            })
+            .on("select", function (e, dt, type, indexes) {
+              var rowData = table.rows(indexes).data().toArray();
+              $("#row-data").html(JSON.stringify(rowData));
+            })
+            .on("deselect", function () {
+              $("#row-data").empty();
+            });
+
+          $("#filterType, #filterPracticeArea, #filterOrigin").on(
+            "change",
+            filterData
+          );
+        },
+        error: function (error) {
+          console.error("Error parsing CSV: ", error);
+        },
       });
-
-      $("#closeDialog")
-        .on("click", function () {
-          $("#cardDetailsDialog")[0].close();
-        })
-        .on("select", function (e, dt, type, indexes) {
-          var rowData = table.rows(indexes).data().toArray();
-          $("#row-data").html(JSON.stringify(rowData));
-        })
-        .on("deselect", function () {
-          $("#row-data").empty();
-        });
-      // Dropdown filter event listeners
-      $("#filterResource, #filterPracticeArea, #filterOrigin").on(
-        "change",
-        filterData
-      );
-    })
-
-    .catch((error) => {
-      console.error("Error fetching data: ", error);
-      // Handle errors in fetching data here, such as displaying a message to the user
     });
 });
 

@@ -6,24 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive DataTable</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js
+    "></script>
+    <link href="
+    https://cdn.jsdelivr.net/npm/papaparse@5.4.1/player/player.min.css
+    " rel="stylesheet">
     <link rel="stylesheet" type="text/css"
-    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css"
-    href="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.6/sc-2.0.0/sl-1.3.0/datatables.min.css">
+        href="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.6/sc-2.0.0/sl-1.3.0/datatables.min.css">
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
+
 <body>
     <h1 class="title display-4 text-center mb-7 fw-bolder py-5">ODI Tools Register</h1>
-<div class="container mb-4">
+    <div class="container mb-4">
 
 
-    <!-- <div class="filter-checkbox">
+        <!-- <div class="filter-checkbox">
     <div id="columnToggles">
         <label class="filter-item"><input type="checkbox" data-column="0" checked="checked">Resource</label>
         <label class="filter-item"><input type="checkbox" data-column="1" checked="checked">Publisher</label>
@@ -34,54 +44,56 @@
         <label class="filter-item"><input type="checkbox" data-column="6">Report Issue</label>
     </div> -->
 
-<div class="row mb-3">
-    <!-- Filter dropdowns wrapped in Bootstrap classes -->
-    <div class="col-md-4 mb-2">
-        <select id="filterResource" class="form-select">
-            <option value="">Resource Type</option>
-            <!-- Options will be filled dynamically -->
-        </select>
-    </div>
-    <div class="col-md-4 mb-2">
-        <select id="filterPracticeArea" class="form-select">
-            <option value="">Practice Area</option>
-            <!-- Options will be filled dynamically -->
-        </select>
-    </div>
-    <div class="col-md-4 mb-2">
-        <select id="filterOrigin" class="form-select">
-            <option value="">Origin</option>
-            <!-- Options will be filled dynamically -->
-        </select>
-    </div>
-</div>
+        <div class="row mb-3">
+            <!-- Filter dropdowns wrapped in Bootstrap classes -->
+            <div class="col-md-4 mb-2">
+                <select id="filterType" class="form-select">
+                    <option value="">Type</option>
+                    <!-- Options will be filled dynamically -->
+                </select>
+            </div>
+            <div class="col-md-4 mb-2">
+                <select id="filterPracticeArea" class="form-select">
+                    <option value="">Practice Area</option>
+                    <!-- Options will be filled dynamically -->
+                </select>
+            </div>
+            <div class="col-md-4 mb-2">
+                <select id="filterOrigin" class="form-select">
+                    <option value="">Origin</option>
+                    <!-- Options will be filled dynamically -->
+                </select>
+            </div>
+        </div>
 
-    <dialog id="cardDetailsDialog">
-        <h2>Tool details</h2>
-        <p id="cardDetailsContent"></p>
-        <button id="closeDialog">Close</button>
-    </dialog>
+        <dialog id="cardDetailsDialog">
+            <h2>Tool details</h2>
+            <p id="cardDetailsContent"></p>
+            <button id="closeDialog">Close</button>
+        </dialog>
 
-<div class="container">
+        <div class="table-container">
 
-<table id="toolTable" class="table">
-        <thead>
-            <tr>
-                <th>Resource</th>
-                <th>Publisher</th>
-                <th>Year Published</th>
-                <th>Tool URL</th>
-                <th>Practice Area</th>
-                <th>Tags</th>
-                <th>Report Issue</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Data will be loaded here by DataTables -->
-        </tbody>
-    </table>
-</div>
-    <script type="text/javascript" src="./main.js"></script>
+            <table id="toolTable" class="table">
+                <thead>
+                    <tr>
+                        <th>Resource</th>
+                        <th>Author/Publisher</th>
+                        <th>Practice Area</th>
+                        <th>Year Published</th>
+                        <th>Tool URL</th>
+                        <th>Type</th>
+                        <th>Tags</th>
+                        <th>Citation</th>
+                        <th>Origin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be loaded here by DataTables -->
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="./main.js"></script>
 
 </body>
 

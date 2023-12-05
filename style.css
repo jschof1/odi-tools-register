@@ -7,9 +7,17 @@ button {
     background-color: #263FA9;
     color: white;
 }
-
+.container {
+    max-width: 100%;
+    padding-right: 15px;
+    /* Adjust as needed */
+    padding-left: 15px;
+    /* Adjust as needed */
+    margin-right: auto;
+    margin-left: auto;
+}
 /* cursor table row */
-table   tbody tr:hover {
+table tbody tr:hover {
     cursor: pointer;
 }
 
@@ -17,6 +25,7 @@ table   tbody tr:hover {
 table tbody tr:hover td {
     background-color: #e9ecef;
 }
+
 .cards tbody tr {
     float: left;
     width: 20rem;
@@ -25,8 +34,9 @@ table tbody tr:hover td {
     background-color: #f9f9f9;
     padding: 1rem;
     border: 1px solid #ddd;
-        /* Border for the card */
+    /* Border for the card */
 }
+
 
 
 .cards tbody {
@@ -41,9 +51,9 @@ table tbody tr:hover td {
 .cards tbody td {
     display: block;
     word-wrap: break-word;
-        /* Breaks the words to prevent overflow */
-        overflow-wrap: break-word;
-        /* Alternative to word-wrap */
+    /* Breaks the words to prevent overflow */
+    overflow-wrap: break-word;
+    /* Alternative to word-wrap */
 }
 
 .cards thead {
@@ -67,6 +77,7 @@ table tbody tr:hover td {
 .issue-url {
     color: white;
 }
+
 .cards a {
     text-decoration: none;
 }
@@ -86,4 +97,27 @@ button {
     border: none;
     cursor: pointer;
     outline: inherit;
+}
+
+@media screen and (max-width: 1200px) {
+    .cards tbody tr {
+        width: calc(50% - 1rem);
+        /* 2 cards per row */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cards tbody tr {
+        width: calc(100% - 2rem);
+        /* 1 card per row */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cards tbody tr {
+        width: calc(100% - 2rem);
+        /* 1 card per row, smaller screens */
+        padding: 0.5rem;
+        /* Smaller padding for very small screens */
+    }
 }
