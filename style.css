@@ -1,8 +1,22 @@
-/* set background */
-body {
-    padding: 1rem;
+.title {
+    background-color: #263FA9;
+    color: white;
 }
 
+button {
+    background-color: #263FA9;
+    color: white;
+}
+
+/* cursor table row */
+table   tbody tr:hover {
+    cursor: pointer;
+}
+
+/* gray hover */
+table tbody tr:hover td {
+    background-color: #e9ecef;
+}
 .cards tbody tr {
     float: left;
     width: 20rem;
@@ -50,9 +64,10 @@ body {
     color: black;
 }
 
-
+.issue-url {
+    color: white;
+}
 .cards a {
-    color: #007bff;
     text-decoration: none;
 }
 
@@ -66,4 +81,9 @@ tr.selected {
 }
 
 
-
+/* reset button styling */
+button {
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+}

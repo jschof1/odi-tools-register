@@ -49,11 +49,16 @@ $(document).ready(function () {
         buttons: [
           "csv",
           {
-            text: '<i class="fa fa-id-badge fa-fw" aria-hidden="true"></i>',
+            text: '<i class="fa fa-id-badge fa-fw" aria-hidden="true"></i><p>Click to view as table</p>',
             action: function (e, dt, node) {
               $(dt.table().node()).toggleClass("cards");
-              $(".fa", node).toggleClass(["fa-table", "fa-id-badge"]);
-
+              if ($(dt.table().node()).hasClass("cards")) {
+                $(".fa", node).removeClass("fa-table").addClass("fa-id-badge");
+                $("p", node).text("Click to view as table");
+              } else {
+                $(".fa", node).removeClass("fa-id-badge").addClass("fa-table");
+                $("p", node).text("Click to view as cards");
+              }
               dt.draw("page");
             },
             className: "btn-sm",
@@ -119,6 +124,11 @@ $(document).ready(function () {
         },
       });
 
+      // Set the default view to cards
+      $(table.table().node()).addClass("cards");
+      $(".fa", this).toggleClass(["fa-table", "fa-id-badge"]);
+      table.draw();
+
       // Event bindings for select and deselect
       table.on("click", "tr", function () {
         var data = table.row(this).data();
@@ -162,3 +172,6 @@ $(document).ready(function () {
 $("#closeDialog").on("click", function () {
   $("#cardDetailsDialog")[0].close();
 });
+
+// assign different colors to the tags in the table
+var tags = document.getElementsByClassName("tags");
