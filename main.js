@@ -189,6 +189,8 @@ $(document).ready(function () {
             "change",
             filterData
           );
+
+          $("#loading").hide();
         },
         error: function (error) {
           console.error("Error parsing CSV: ", error);
